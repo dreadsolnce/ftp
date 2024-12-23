@@ -1,0 +1,29 @@
+listen=YES
+listen_ipv6=NO
+connect_from_port_20=YES
+anonymous_enable=NO
+local_enable=YES
+write_enable=YES
+chroot_local_user=YES
+allow_writeable_chroot=YES
+secure_chroot_dir=/var/run/vsftpd/empty
+pam_service_name=vsftpd
+pasv_enable=YES
+#pasv_enable=NO
+pasv_address=0.0.0.0
+pasv_min_port=40000
+pasv_max_port=40009
+user_sub_token=$USER
+userlist_enable=YES
+userlist_file=/etc/ftpuser.lst
+userlist_deny=NO
+#local_root=/home/$USER
+local_root=/data/$USER
+
+log_ftp_protocol=YES
+ascii_download_enable=YES
+ascii_upload_enable=YES
+# Логирование всех действий на сервере
+xferlog_enable=YES
+# Путь к лог-файлу
+xferlog_file=/var/log/vsftpd.log
